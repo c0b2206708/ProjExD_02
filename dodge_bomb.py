@@ -2,7 +2,6 @@ import random
 import sys
 import pygame as pg
 
-
 WIDTH, HEIGHT = 1600, 900
 
 delta = {  # 練習３：押下キーと移動量の辞書
@@ -42,8 +41,8 @@ def main():
     bb_rct.centerx = random.randint(0, WIDTH)
     bb_rct.centery = random.randint(0, HEIGHT)
     vx, vy = +5, +5  # 練習２：爆弾の速度
-    go_img = pg.image.load("ex02/fig/8.png")
-    go_img = pg.transform.rotozoom(go_img, 0, 2.0)
+    go_img = pg.image.load("ex02/fig/8.png")  # ゲームオーバー時に切り替える画像の読み込み
+    go_img = pg.transform.rotozoom(go_img, 0, 2.0)  # ゲームオーバー時に切り替える画像を拡大
     kk_img0 = pg.transform.flip(kk_img, True, False)  # 反転
     kk_img1 = pg.transform.rotozoom(kk_img0, 90, 1.0)  # 上
     kk_img2 = pg.transform.rotozoom(kk_img0, 45, 1.0)  # 右上
