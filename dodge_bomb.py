@@ -43,6 +43,8 @@ def main():
     bb_rct.centerx = random.randint(0, WIDTH)
     bb_rct.centery = random.randint(0, HEIGHT)
     vx, vy = +5, +5  # 練習２：爆弾の速度
+    go_img = pg.image.load("ex02/fig/8.png")
+    go_img = pg.transform.rotozoom(go_img, 0, 2.0)
 
     clock = pg.time.Clock()
     tmr = 0
@@ -52,6 +54,10 @@ def main():
                 return
             
         if kk_rct.colliderect(bb_rct):
+            screen.blit(bg_img, [0, 0])
+            screen.blit(go_img, kk_rct)
+            pg.display.update()
+            clock.tick(1)
             print("Game Over")
             return
             
